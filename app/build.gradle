@@ -1,24 +1,30 @@
 plugins {
     id 'com.android.application'
-    id 'kotlin-android'
+    id 'org.jetbrains.kotlin.android'
 }
 
 android {
     namespace 'com.utabiri.mechi'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.utabiri.mechi"
         minSdk 21
-        targetSdk 34
+        targetSdk 35
         versionCode 1
         versionName "1.0"
     }
 
     buildTypes {
+        debug {
+            minifyEnabled false
+        }
+
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile(
+                    'proguard-android-optimize.txt'
+            ), 'proguard-rules.pro'
         }
     }
 
@@ -26,16 +32,17 @@ android {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
+
     kotlinOptions {
         jvmTarget = "17"
     }
-
-    // Hakuna signingConfig maalum imewekwa -> APK ya release itatoka "unsigned"
-    // isipokuwa uongeze keystore (angalia README.md sehemu ya "Kusaini APK").
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:1.12.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
+
+    implementation 'androidx.core:core-ktx:1.13.1'
+
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 }
