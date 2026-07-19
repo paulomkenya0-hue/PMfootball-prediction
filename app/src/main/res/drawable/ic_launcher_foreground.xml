@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Mpira wa dhahabu katikati -->
+    <path
+        android:fillColor="#E8A33D"
+        android:pathData="M54,30 m-20,0 a20,20 0 1,0 40,0 a20,20 0 1,0 -40,0" />
+    <!-- Alama ya "penti" ya mpira -->
+    <path
+        android:fillColor="#0E211C"
+        android:pathData="M54,20 l6,4 l-2,7 l-8,0 l-2,-7 z" />
+    <!-- Mstari wa uwanja chini -->
+    <path
+        android:fillColor="#3FA66A"
+        android:pathData="M14,74 h80 v6 h-80 z" />
+    <path
+        android:fillColor="#F3EFE4"
+        android:pathData="M44,74 h20 v6 h-20 z"
+        android:fillAlpha="0.5" />
+</vector>

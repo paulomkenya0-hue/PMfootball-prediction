@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Utabiri wa Mechi</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="app">
+
+  <!-- Header -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-badge">🏆</div>
+      <div>
+        <h1>UTABIRI WA MECHI</h1>
+        <p class="subtitle">Ratiba na utabiri wa siku &middot; si dau</p>
+      </div>
+    </div>
+    <button id="adminToggleBtn" class="btn btn-ghost">🔒 Msimamizi</button>
+  </header>
+
+  <!-- Connection / error banner -->
+  <div id="banner" class="banner hidden"></div>
+
+  <!-- PIN modal -->
+  <div id="pinModal" class="modal-overlay hidden">
+    <div class="modal">
+      <div class="modal-head">
+        <span>Ingia kama Msimamizi</span>
+        <button id="pinCloseBtn" class="icon-btn">✕</button>
+      </div>
+      <input id="pinInput" type="password" placeholder="Weka PIN" inputmode="numeric" />
+      <p id="pinError" class="error-text hidden"></p>
+      <button id="pinSubmitBtn" class="btn btn-gold full">Ingia</button>
+    </div>
+  </div>
+
+  <main class="content">
+
+    <!-- Admin: add match -->
+    <div id="adminBar" class="hidden">
+      <button id="addMatchBtn" class="btn btn-gold">+ Ongeza Mechi</button>
+
+      <div id="addForm" class="card form hidden">
+        <div class="grid2">
+          <input id="fDate" type="date" />
+          <input id="fTime" type="time" value="18:00" />
+          <input id="fLeague" placeholder="Ligi (mf. Ligi Kuu Tanzania)" class="span2" />
+          <input id="fTeamA" placeholder="Timu A" />
+          <input id="fTeamB" placeholder="Timu B" />
+        </div>
+        <button id="saveMatchBtn" class="btn btn-green">Hifadhi Mechi</button>
+      </div>
+
+      <div class="section-label">Dhibiti Mechi na Utabiri</div>
+    </div>
+
+    <!-- Matches render target -->
+    <div id="matchesRoot"></div>
+
+    <div id="emptyState" class="empty hidden">
+      <div class="empty-icon">📅</div>
+      <p>Hakuna mechi zilizowekwa bado.<br/>Msimamizi anaweza kuongeza kupitia kitufe "Msimamizi" juu.</p>
+    </div>
+
+    <div id="loadingState" class="loading">
+      <span class="spinner"></span> Inapakia...
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    Kwa madhumuni ya utabiri na taarifa tu &middot; Cheza kwa busara
+  </footer>
+</div>
+
+<!-- Firebase (compat SDK, kupitia CDN - inahitaji intaneti) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+<script src="firebase-config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

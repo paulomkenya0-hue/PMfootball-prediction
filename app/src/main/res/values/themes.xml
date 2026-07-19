@@ -1,0 +1,8 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.UtabiriMechi" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/stadium_night</item>
+        <item name="android:windowBackground">@color/stadium_night</item>
+        <item name="colorPrimary">@color/floodlight_gold</item>
+        <item name="colorPrimaryDark">@color/stadium_night</item>
+    </style>
+</resources>

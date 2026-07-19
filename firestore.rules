@@ -1,0 +1,18 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Kila mtu anaweza KUSOMA mechi (ndiyo lengo la programu - watumiaji wote wanaona utabiri).
+    // KUANDIKA (kuongeza/kuhariri/kufuta) pia kuko wazi kwa toleo hili la MVP kwa sababu
+    // programu inatumia PIN ya ndani (client-side) badala ya Firebase Authentication.
+    //
+    // MUHIMU: hii si ulinzi kamili - mtu mwenye ujuzi wa kiufundi anayejua projectId yako
+    // anaweza kuandika moja kwa moja Firestore bila kupitia programu. Kwa matumizi ya
+    // kibiashara/mazito, badilisha hadi Firebase Authentication (angalia README.md
+    // sehemu ya "Kuongeza Usalama Zaidi").
+    match /matches/{matchId} {
+      allow read: if true;
+      allow write: if true;
+    }
+  }
+}
